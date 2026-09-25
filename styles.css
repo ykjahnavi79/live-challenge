@@ -1,0 +1,335 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #08151d;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1250px;
+      margin: 30px auto;
+
+      display: grid;
+
+      /* Random / varied column sizes */
+      grid-template-columns:
+        1fr
+        1.4fr
+        .8fr
+        1.2fr;
+
+      /* Random / varied row sizes */
+      grid-template-rows:
+        150px
+        250px
+        180px
+        220px;
+
+      gap: 14px;
+    }
+
+    .box {
+      overflow: hidden;
+      background: #10232d;
+    }
+
+    .box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* =========================
+       1. LOGO
+    ========================= */
+
+    .logo {
+      padding: 28px;
+      background: #0d2029;
+
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    .logo h1 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+    }
+
+    .logo span {
+      color: #e96891;
+    }
+
+    .logo p {
+      color: #e96891;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       2. DESCRIPTION
+    ========================= */
+
+    .description {
+      padding: 25px;
+
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .description h2 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .description p {
+      color: #aebcc1;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       3. MAIN IMAGE
+    ========================= */
+
+    .main-image {
+      grid-column: 1 / 4;
+      grid-row: 2 / 4;
+    }
+
+    /* =========================
+       4. CUISINE
+    ========================= */
+
+    .cuisine {
+      grid-column: 4;
+      grid-row: 1 / 3;
+
+      position: relative;
+    }
+
+    .cuisine-text {
+      position: absolute;
+      left: 22px;
+      top: 25px;
+      z-index: 2;
+    }
+
+    .cuisine-text h2 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+    }
+
+    .cuisine-text p {
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       5. SMALL IMAGE
+    ========================= */
+
+    .small-image {
+      grid-column: 4;
+      grid-row: 3;
+    }
+
+    /* =========================
+       6. STAY
+    ========================= */
+
+    .stay {
+      padding: 28px;
+
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    .stay h2 {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      margin-bottom: 7px;
+    }
+
+    .stay p {
+      color: #aebcc1;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       7. EXTRA GRID
+       THIS WAS MISSING
+    ========================= */
+
+    .extra {
+      grid-column: 2 / 4;
+      grid-row: 4;
+
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 14px;
+    }
+
+    .extra-image {
+      overflow: hidden;
+    }
+
+    .extra-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =========================
+       8. FINAL GRID
+    ========================= */
+
+    .final {
+      grid-column: 4;
+      grid-row: 4;
+
+      background: #e96891;
+
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .final h2 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .final p {
+      color: white;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HOVER
+    ========================= */
+
+    .image-box {
+      transition: transform .3s ease;
+    }
+
+    .image-box:hover {
+      transform: scale(.98);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .container {
+        width: 94%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+          130px
+          220px
+          250px
+          180px
+          180px
+          180px;
+      }
+
+      .logo {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+
+      .description {
+        grid-column: 1 / 3;
+        grid-row: 2;
+      }
+
+      .main-image {
+        grid-column: 1 / 3;
+        grid-row: 3;
+      }
+
+      .cuisine {
+        grid-column: 1;
+        grid-row: 4;
+      }
+
+      .small-image {
+        grid-column: 2;
+        grid-row: 4;
+      }
+
+      .stay {
+        grid-column: 1;
+        grid-row: 5;
+      }
+
+      .extra {
+        grid-column: 2;
+        grid-row: 5;
+
+        display: block;
+      }
+
+      .extra-image:nth-child(2) {
+        display: none;
+      }
+
+      .final {
+        grid-column: 1 / 3;
+        grid-row: 6;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .description {
+        height: 180px;
+      }
+
+      .main-image {
+        height: 350px;
+      }
+
+      .cuisine,
+      .small-image,
+      .stay,
+      .extra,
+      .final {
+        height: 220px;
+      }
+
+      .extra {
+        display: block;
+      }
+    }
+
+  
